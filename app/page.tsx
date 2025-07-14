@@ -11,7 +11,7 @@ import { AlertCircle, CheckCircle2, Code2, Copy, Send, Wand2 } from 'lucide-reac
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Label } from "@/components/ui/label"
 import { Switch } from "@/components/ui/switch"
-import { toast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 import { FaDiscord, FaSlack } from "react-icons/fa";
 import CodeComparison from '@/components/ui/code-comparison'
 import { ModeToggle } from '@/components/ui/theme-toggle'
@@ -138,10 +138,7 @@ print(f'Webhook sent with status code: {response.status_code}')
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(getCodeSnippet()).then(() => {
-      toast({
-        title: "Copied to clipboard",
-        description: "The code snippet has been copied to your clipboard.",
-      })
+      toast.success("Copied to clipboard")
     })
   }
 
